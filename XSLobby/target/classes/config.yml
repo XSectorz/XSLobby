@@ -1,0 +1,18 @@
+
+chat_prefix: "<rank> &x&6&4&d&7&5&e<name> &x&d&5&f&f&e&c: &x&b&4&b&d&d&7<messages>"
+
+spawn:
+  world: SCLobby
+  x: -18.5
+  y: 86.5
+  z: -251.5
+  yaw: 0.0
+  pitch: 0.0
+
+item_join:
+  item-1:
+    material: CLOCK
+    slot: 0
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cServer Selector &x&f&f&9&f&3&c&l◂"
+    lore: []

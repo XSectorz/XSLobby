@@ -1,0 +1,9 @@
+panat\xsectorz\configuration\messages.class
+panat\xsectorz\core\XSLobby.class
+panat\xsectorz\listeners\onChat.class
+panat\xsectorz\listeners\onFall.class
+panat\xsectorz\listeners\onJoin.class
+panat\xsectorz\utils\XSUtils.class
+panat\xsectorz\listeners\onModify.class
+panat\xsectorz\configuration\config.class
+panat\xsectorz\configuration\loadConfig.class

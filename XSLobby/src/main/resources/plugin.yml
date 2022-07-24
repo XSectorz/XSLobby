@@ -1,0 +1,6 @@
+name: XSLobby
+version: '${project.version}'
+main: panat.xsectorz.core.XSLobby
+api-version: 1.16
+authors: [ PanatXsectorZ ]
+description: XSectorz lobby core
