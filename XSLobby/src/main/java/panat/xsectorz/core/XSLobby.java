@@ -4,11 +4,9 @@ import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import panat.xsectorz.commands.XSCommand;
 import panat.xsectorz.configuration.loadConfig;
-import panat.xsectorz.listeners.onChat;
-import panat.xsectorz.listeners.onFall;
-import panat.xsectorz.listeners.onJoin;
-import panat.xsectorz.listeners.onModify;
+import panat.xsectorz.listeners.*;
 
 public final class XSLobby extends JavaPlugin {
 
@@ -35,6 +33,10 @@ public final class XSLobby extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new onJoin(),this);
         Bukkit.getPluginManager().registerEvents(new onModify(),this);
         Bukkit.getPluginManager().registerEvents(new onFall(),this);
+        Bukkit.getPluginManager().registerEvents(new onInteract(),this);
+
+        this.getCommand("facebook").setExecutor(new XSCommand());
+        this.getCommand("discord").setExecutor(new XSCommand());
 
         new loadConfig();
     }

@@ -1,5 +1,7 @@
 
 chat_prefix: "<rank> &x&6&4&d&7&5&e<name> &x&d&5&f&f&e&c: &x&b&4&b&d&d&7<messages>"
+facebook_URL: "https://fb.com/mcsiamcraft"
+discord_URL: "https://discord.gg/KASBrBTR2X"
 
 spawn:
   world: SCLobby
