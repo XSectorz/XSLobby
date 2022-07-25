@@ -15,6 +15,7 @@ public class onJoin implements Listener {
 
         XSUtils.spawn(p);
         XSUtils.loadItemsJoin(p);
+        e.setJoinMessage(null);
 
     }
 

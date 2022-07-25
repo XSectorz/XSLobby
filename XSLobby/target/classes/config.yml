@@ -18,3 +18,53 @@ item_join:
     amount: 1
     displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cServer Selector &x&f&f&9&f&3&c&l◂"
     lore: []
+  item-2:
+    material: DIAMOND_SWORD
+    slot: 7
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cPvp Mode &x&f&f&9&f&3&c&l◂"
+    lore: []
+
+item_pvp:
+  item_1:
+    material: DIAMOND_SWORD
+    slot: 7
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cPvp Mode &x&f&f&9&f&3&c&l◂"
+    enchantments:
+      - "damage_all:1"
+    lore: []
+  item_2:
+    material: DIAMOND_HELMET
+    slot: HELMET
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cSiam Helmet &x&f&f&9&f&3&c&l◂"
+    enchantments:
+      - "PROTECTION_ENVIRONMENTAL:1"
+    lore: []
+  item_3:
+    material: DIAMOND_CHESTPLATE
+    slot: CHESTPLATE
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cSiam Chestplate &x&f&f&9&f&3&c&l◂"
+    enchantments:
+      - "PROTECTION_ENVIRONMENTAL:1"
+    lore: []
+  item_4:
+    material: DIAMOND_LEGGINGS
+    slot: LEGGINGS
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cSiam Leggings &x&f&f&9&f&3&c&l◂"
+    enchantments:
+      - "PROTECTION_ENVIRONMENTAL:1"
+    lore: []
+  item_5:
+    material: DIAMOND_BOOTS
+    slot: BOOTS
+    amount: 1
+    displayName: "&x&f&f&9&f&3&c&l▸ &x&6&b&e&e&7&cSiam Boots &x&f&f&9&f&3&c&l◂"
+    enchantments:
+      - "PROTECTION_ENVIRONMENTAL:1"
+    lore: []
+
+
