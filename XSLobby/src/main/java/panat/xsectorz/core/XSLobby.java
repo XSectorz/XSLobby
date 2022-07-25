@@ -35,8 +35,8 @@ public final class XSLobby extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new onFall(),this);
         Bukkit.getPluginManager().registerEvents(new onInteract(),this);
 
-        this.getCommand("facebook").setExecutor(new XSCommand());
-        this.getCommand("discord").setExecutor(new XSCommand());
+        getCommand("facebook").setExecutor(new XSCommand());
+        getCommand("discord").setExecutor(new XSCommand());
 
         new loadConfig();
     }

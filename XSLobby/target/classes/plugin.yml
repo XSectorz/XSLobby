@@ -4,8 +4,7 @@ main: panat.xsectorz.core.XSLobby
 api-version: 1.16
 authors: [ PanatXsectorZ ]
 description: XSectorz lobby core
-depend:
-  - LuckPerms
+depend: [LuckPerms]
 commands:
   facebook:
     description: command for open facebook

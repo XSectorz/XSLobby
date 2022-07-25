@@ -13,6 +13,7 @@ import panat.xsectorz.configuration.config;
 import panat.xsectorz.utils.XSUtils;
 
 public class XSCommand implements CommandExecutor {
+
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg, String[] args) {
 
