@@ -43,7 +43,7 @@ public class XSCommand implements CommandExecutor {
                 p.sendMessage("");
                 sender.spigot().sendMessage(message3);
                 p.sendMessage("");
-                p.sendMessage(XSUtils.transColor("&x&5&2&c&1&4&4❙ &fคุณสามารถติดต่อ &x&f&3&5&b&5&6Panat XSector.me#7121 &fเพื่อแก้ไขปัญหาดังกล่าวได้"));
+                p.sendMessage(XSUtils.transColor("&x&5&2&c&1&4&4❙ &fคุณสามารถติดต่อ &x&f&3&5&b&5&6https://discord.siamcraft.net/ &fเพื่อแก้ไขปัญหาดังกล่าวได้"));
                 p.sendMessage("");
                 return true;
             } else if(cmd.getName().equalsIgnoreCase("discord")) {
@@ -71,7 +71,7 @@ public class XSCommand implements CommandExecutor {
                 p.sendMessage("");
                 sender.spigot().sendMessage(message3);
                 p.sendMessage("");
-                p.sendMessage(XSUtils.transColor("&x&e&3&4&1&e&c❙ &fคุณสามารถติดต่อ &x&f&3&5&b&5&6Panat XSector.me#7121 &fเพื่อแก้ไขปัญหาดังกล่าวได้"));
+                p.sendMessage(XSUtils.transColor("&x&e&3&4&1&e&c❙ &fคุณสามารถติดต่อ &x&f&3&5&b&5&6https://discord.siamcraft.net/ &fเพื่อแก้ไขปัญหาดังกล่าวได้"));
                 p.sendMessage("");
                 return true;
             }

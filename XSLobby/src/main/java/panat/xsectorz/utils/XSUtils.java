@@ -42,9 +42,17 @@ public class XSUtils {
 
     }
 
+    public static void clearContents(Player p) {
+        p.getInventory().clear();
+    }
+
     public static void loadItemsJoin(Player p) {
 
-        p.getInventory().clear();
+        p.getInventory().setHelmet(new ItemStack(Material.AIR));
+        p.getInventory().setChestplate(new ItemStack(Material.AIR));
+        p.getInventory().setLeggings(new ItemStack(Material.AIR));
+        p.getInventory().setBoots(new ItemStack(Material.AIR));
+        clearContents(p);
 
         for (String item : config.customConfig.getConfigurationSection("item_join").getKeys(false)) {
             Material mat = Material.getMaterial(config.customConfig.getString("item_join." + item + ".material"));
@@ -59,6 +67,7 @@ public class XSUtils {
     }
 
     public static void loadItemsPvp(Player p) {
+        clearContents(p);
 
         for (String item : config.customConfig.getConfigurationSection("item_pvp").getKeys(false)) {
             Material mat = Material.getMaterial(config.customConfig.getString("item_pvp." + item + ".material"));
