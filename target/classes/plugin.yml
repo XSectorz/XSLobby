@@ -1,0 +1,12 @@
+name: XSLobby
+version: '1.0-SNAPSHOT'
+main: panat.xsectorz.core.XSLobby
+api-version: 1.16
+authors: [ PanatXsectorZ ]
+description: XSectorz lobby core
+softdepend: [LuckPerms]
+commands:
+  facebook:
+    description: command for open facebook
+  discord:
+    description: command for open discord
