@@ -5,9 +5,11 @@ panat\xsectorz\listeners\onModify.class
 panat\xsectorz\configuration\config.class
 panat\xsectorz\configuration\loadConfig.class
 panat\xsectorz\listeners\onChangeSlot.class
+panat\xsectorz\listeners\onPlayerMove$1.class
 panat\xsectorz\configuration\messages.class
 panat\xsectorz\core\XSLobby$1.class
 panat\xsectorz\core\XSLobby.class
+panat\xsectorz\listeners\onPlayerMove.class
 panat\xsectorz\listeners\onChat.class
 panat\xsectorz\listeners\onFall.class
 panat\xsectorz\listeners\onInteract.class

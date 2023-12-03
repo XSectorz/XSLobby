@@ -40,7 +40,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputFile>C:\Users\Computer\Desktop\project\output\[XSAPI]_XSLobby.jar</outputFile>
+                            <outputFile>D:\MinecraftServer\Lobby\plugins\[XSAPI]_XSLobby.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>

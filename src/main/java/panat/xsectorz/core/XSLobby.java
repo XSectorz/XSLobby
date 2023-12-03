@@ -11,6 +11,7 @@ import panat.xsectorz.configuration.loadConfig;
 import panat.xsectorz.listeners.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public final class XSLobby extends JavaPlugin {
 
@@ -18,6 +19,7 @@ public final class XSLobby extends JavaPlugin {
     public static LuckPerms luckPerms;
 
     public static ArrayList<Player> pvp = new ArrayList<>();
+    public static ArrayList<Player> insideArea = new ArrayList<>();
 
     public static XSLobby getPlugin() {
         return plugin;
@@ -25,13 +27,13 @@ public final class XSLobby extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Bukkit.getLogger().info("§e***************************");
-        Bukkit.getLogger().info("§r");
-        Bukkit.getLogger().info("§a    XSLobby - v1.0");
-        Bukkit.getLogger().info("§e   Status: §aEnabled");
-        Bukkit.getLogger().info("§c   By Panat Xsectorz");
-        Bukkit.getLogger().info("§r");
-        Bukkit.getLogger().info("§e***************************");
+        Bukkit.getConsoleSender().sendMessage("§e***************************");
+        Bukkit.getConsoleSender().sendMessage("§r");
+        Bukkit.getConsoleSender().sendMessage("§a    XSLobby - v2.0");
+        Bukkit.getConsoleSender().sendMessage("§e   Status: §aEnabled");
+        Bukkit.getConsoleSender().sendMessage("§c   By Panat Xsectorz");
+        Bukkit.getConsoleSender().sendMessage("§r");
+        Bukkit.getConsoleSender().sendMessage("§e***************************");
 
         plugin = this;
 
@@ -43,6 +45,7 @@ public final class XSLobby extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new onChangeSlot(),this);
         Bukkit.getPluginManager().registerEvents(new onQuit(),this);
         Bukkit.getPluginManager().registerEvents(new onDamage(),this);
+        Bukkit.getPluginManager().registerEvents(new onPlayerMove(),this);
 
         getCommand("facebook").setExecutor(new XSCommand());
         getCommand("discord").setExecutor(new XSCommand());
@@ -59,13 +62,13 @@ public final class XSLobby extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        Bukkit.getLogger().info("§e***************************");
-        Bukkit.getLogger().info("§r");
-        Bukkit.getLogger().info("§a    XSLobby - v1.0");
-        Bukkit.getLogger().info("§e   Status: §cDisabled");
-        Bukkit.getLogger().info("§c   By Panat Xsectorz");
-        Bukkit.getLogger().info("§r");
-        Bukkit.getLogger().info("§e***************************");
+        Bukkit.getConsoleSender().sendMessage("§e***************************");
+        Bukkit.getConsoleSender().sendMessage("§r");
+        Bukkit.getConsoleSender().sendMessage("§a    XSLobby - v2.0");
+        Bukkit.getConsoleSender().sendMessage("§e   Status: §cDisabled");
+        Bukkit.getConsoleSender().sendMessage("§c   By Panat Xsectorz");
+        Bukkit.getConsoleSender().sendMessage("§r");
+        Bukkit.getConsoleSender().sendMessage("§e***************************");
 
     }
 }

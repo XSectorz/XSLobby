@@ -1,5 +1,6 @@
 package panat.xsectorz.listeners;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -11,18 +12,30 @@ public class onModify implements Listener {
 
     @EventHandler
     public void modifyItemSlot(InventoryDragEvent e) {
-        e.setCancelled(true);
+        Player p = (Player) e.getWhoClicked();
+
+        if(!p.hasPermission("xsapi.developer")) {
+            e.setCancelled(true);
+        }
     }
 
     @EventHandler
     public void modifyItemSlot(PlayerDropItemEvent e) {
-        e.setCancelled(true);
+        Player p = e.getPlayer();
+
+        if(!p.hasPermission("xsapi.developer")) {
+            e.setCancelled(true);
+        }
     }
 
     @EventHandler
     public void modifyItemSlot(InventoryClickEvent e) {
-        if (e.getSlot() != e.getRawSlot()) {
-            e.setCancelled(true);
+        Player p = (Player) e.getWhoClicked();
+
+        if(!p.hasPermission("xsapi.developer")) {
+            if (e.getSlot() != e.getRawSlot()) {
+                e.setCancelled(true);
+            }
         }
     }
 
