@@ -1,5 +1,8 @@
 package panat.xsectorz.utils;
 
+import com.plotsquared.core.plot.Plot;
+import com.plotsquared.core.plot.flag.implementations.*;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -11,18 +14,24 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import panat.xsectorz.configuration.config;
 import panat.xsectorz.configuration.messages;
+import panat.xsectorz.menu.XSMenuHandler;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Objects;
 
 public class XSUtils {
+
+    public static String SELECTED_COLOR = messages.customConfig.getString("settings.selected");
+    public static String NONE_SELECTED_COLOR = messages.customConfig.getString("settings.not_selected");
 
     public static void spawn(Player p) {
 
         String worldName = config.customConfig.getString("spawn.world");
 
         if(Bukkit.getServer().getWorld(worldName) == null) {
-            p.sendMessage(transColor(messages.customConfig.getString("world__null")));
+            p.sendMessage(transColor(messages.customConfig.getString("world_null")));
             return;
         }
         World world = Bukkit.getServer().getWorld(worldName);
@@ -46,6 +55,23 @@ public class XSUtils {
         p.getInventory().clear();
     }
 
+    public static void loadItemFromConfig(String section,Player p) {
+        for (String item : config.customConfig.getConfigurationSection(section).getKeys(false)) {
+            Material mat = Material.getMaterial(Objects.requireNonNull(config.customConfig.getString(section + "." + item + ".material")));
+            int slot = config.customConfig.getInt(section+"." + item + ".slot");
+            int amount = config.customConfig.getInt(section+"." + item + ".amount");
+            String displayName = config.customConfig.getString(section+"." + item + ".displayName");
+            ArrayList<String> lore = (ArrayList<String>) config.customConfig.getStringList(section+"." + item + ".lore");
+
+            p.getInventory().setItem(slot,createItemStack(mat,amount,displayName,lore));
+        }
+        p.updateInventory();
+    }
+
+    public static void loadCreativeItems(Player p) {
+        loadItemFromConfig("creative_item",p);
+    }
+
     public static void loadItemsJoin(Player p) {
 
         p.getInventory().setHelmet(new ItemStack(Material.AIR));
@@ -53,17 +79,151 @@ public class XSUtils {
         p.getInventory().setLeggings(new ItemStack(Material.AIR));
         p.getInventory().setBoots(new ItemStack(Material.AIR));
         clearContents(p);
+        loadItemFromConfig("item_join",p);
+    }
 
-        for (String item : config.customConfig.getConfigurationSection("item_join").getKeys(false)) {
-            Material mat = Material.getMaterial(config.customConfig.getString("item_join." + item + ".material"));
-            int slot = config.customConfig.getInt("item_join." + item + ".slot");
-            int amount = config.customConfig.getInt("item_join." + item + ".amount");
-            String displayName = config.customConfig.getString("item_join." + item + ".displayName");
-            ArrayList<String> lore = (ArrayList<String>) config.customConfig.getStringList("item_join." + item + ".lore");
+    public static ArrayList<String> decodePlaceholder(ArrayList<String> lores, Player p, Plot plot,int plotCount,boolean isSameBiome) {
 
-            p.getInventory().setItem(slot,createItemStack(mat,amount,displayName,lore));
+        ArrayList<String> loreNew = new ArrayList<>();
+
+        for(String lore : lores) {
+
+            if(lore.equalsIgnoreCase("%weather_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+                    if(plot.getFlag(WeatherFlag.class).toString().equalsIgnoreCase("CLEAR")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.weather.clear")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.weather.rainy")));
+                        continue;
+                    } else if(plot.getFlag(WeatherFlag.class).toString().equalsIgnoreCase("RAIN")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.weather.clear")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.weather.rainy")));
+                        continue;
+                    }
+                }
+
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.weather.clear")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.weather.rainy")));
+
+            } else if(lore.equalsIgnoreCase("%time_setting%")) {
+
+                ArrayList<String> loreTime = new ArrayList<>();
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.hero")) {
+
+                    int index = 0;
+                    for(String section : messages.customConfig.getConfigurationSection("settings.time").getKeys(false)) {
+                        String prefix = NONE_SELECTED_COLOR;
+                        if(XSMenuHandler.getTimeList().get(index).equalsIgnoreCase(plot.getFlag(TimeFlag.class).toString())) {
+                            prefix = SELECTED_COLOR;
+                        }
+                        loreTime.add(XSUtils.replaceColor(prefix + messages.customConfig.getString("settings.time."+section)));
+                        index++;
+                    }
+
+                } else {
+                    for(String section : messages.customConfig.getConfigurationSection("settings.time").getKeys(false)) {
+                        String prefix = NONE_SELECTED_COLOR;
+                        loreTime.add(XSUtils.replaceColor(prefix + messages.customConfig.getString("settings.time."+section)));
+                    }
+                }
+
+                loreNew.addAll(loreTime);
+
+            } else if(lore.equalsIgnoreCase("%pvp_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                 && p.hasPermission("xsapi.creative.hero")) {
+                    if(plot.getFlag(PvpFlag.class).toString().equalsIgnoreCase("true")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.pvp.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.pvp.disable")));
+                        continue;
+                    } else if(plot.getFlag(PvpFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.pvp.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.pvp.disable")));
+                        continue;
+                    }
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.pvp.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.pvp.disable")));
+            } else if(lore.equalsIgnoreCase("%invincible_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.hero")) {
+                    if(plot.getFlag(InvincibleFlag.class).toString().equalsIgnoreCase("true")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.invincible.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.disable")));
+                        continue;
+                    } else if(plot.getFlag(InvincibleFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.invincible.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.disable")));
+            } else if(lore.equalsIgnoreCase("%gamemode_setting%")) {
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.hero")) {
+                    String gameMode = plot.getFlagContainer().getFlagErased(GuestGamemodeFlag.class).toString();
+                    for(String section : messages.customConfig.getConfigurationSection("settings.gamemode").getKeys(false)) {
+                        String prefix = NONE_SELECTED_COLOR;
+                        if(section.equalsIgnoreCase(gameMode)) {
+                            prefix = SELECTED_COLOR;
+                        }
+                        loreNew.add(XSUtils.replaceColor(prefix+messages.customConfig.getString("settings.gamemode." + section)));
+                    }
+                    continue;
+                }
+                for(String section : messages.customConfig.getConfigurationSection("settings.gamemode").getKeys(false)) {
+                    String prefix = NONE_SELECTED_COLOR;
+                    loreNew.add(XSUtils.replaceColor(prefix+messages.customConfig.getString("settings.gamemode." + section)));
+                }
+            } else if(lore.equalsIgnoreCase("%click_option%")) {
+                if(plot == null || plot.getOwner() == null || !plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                    loreNew.add(XSUtils.replaceColor(messages.customConfig.getString("settings.click_option.not_your_own")));
+                } else {
+                    if(lores.contains("%weather_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
+                    } else if(lores.contains("%time_setting%") && !p.hasPermission("xsapi.creative.hero")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
+                        continue;
+                    } else if(lores.contains("%pvp_setting%") && !p.hasPermission("xsapi.creative.hero")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
+                        continue;
+                    } else if(lores.contains("%invincible_setting%") && !p.hasPermission("xsapi.creative.hero")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
+                        continue;
+                    }
+
+                    if(isSameBiome) {
+                        loreNew.add(XSUtils.replaceColor(messages.customConfig.getString("settings.click_option.already_choosen")));
+                        continue;
+                    }
+
+                    loreNew.add(XSUtils.replaceColor(messages.customConfig.getString("settings.click_option.click_to_toggle")));
+                }
+            } else {
+                lore = lore.replace("%plot_have%",String.valueOf(plotCount));
+                lore = lore.replace("%plot_available%",PlaceholderAPI.setPlaceholders(p,"%plotsquared_allowed_plot_count%").replace("&7",""));
+                loreNew.add(XSUtils.replaceColor(lore));
+            }
+
         }
-        p.updateInventory();
+        return loreNew;
+
+    }
+
+    public static String replaceWithRank(String str,String rank) {
+        return XSUtils.replaceColor(str.replace("%rank%",messages.customConfig.getString("ranks."+rank)));
+    }
+
+
+    public static String replaceColor(String str) {
+        return str.replace("&","§");
     }
 
     public static void loadItemsPvp(Player p) {
@@ -114,6 +274,13 @@ public class XSUtils {
             it.setItemMeta(itm);
         }
 
+        if(it.hasItemMeta()) {
+            ItemMeta itemMeta = it.getItemMeta();
+            itemMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+            itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+            it.setItemMeta(itemMeta);
+        }
+
         return it;
     }
 
@@ -148,7 +315,9 @@ public class XSUtils {
 
         ItemMeta itm = it.getItemMeta();
         itm.setUnbreakable(true);
+        itm.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         itm.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        it.setItemMeta(itm);
 
         return it;
     }

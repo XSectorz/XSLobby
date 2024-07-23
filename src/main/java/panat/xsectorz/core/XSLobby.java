@@ -39,13 +39,17 @@ public final class XSLobby extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new onChat(),this);
         Bukkit.getPluginManager().registerEvents(new onJoin(),this);
-        Bukkit.getPluginManager().registerEvents(new onModify(),this);
-        Bukkit.getPluginManager().registerEvents(new onFall(),this);
-        Bukkit.getPluginManager().registerEvents(new onInteract(),this);
-        Bukkit.getPluginManager().registerEvents(new onChangeSlot(),this);
         Bukkit.getPluginManager().registerEvents(new onQuit(),this);
-        Bukkit.getPluginManager().registerEvents(new onDamage(),this);
-        Bukkit.getPluginManager().registerEvents(new onPlayerMove(),this);
+        Bukkit.getPluginManager().registerEvents(new onModify(),this);
+        Bukkit.getPluginManager().registerEvents(new onInteract(),this);
+        Bukkit.getPluginManager().registerEvents(new onClickInventory(),this);
+
+        if(getConfig().getString("configuration_mode").equalsIgnoreCase("lobby")) {
+            Bukkit.getPluginManager().registerEvents(new onFall(),this);
+            Bukkit.getPluginManager().registerEvents(new onChangeSlot(),this);
+            Bukkit.getPluginManager().registerEvents(new onDamage(),this);
+            Bukkit.getPluginManager().registerEvents(new onPlayerMove(),this);
+        }
 
         getCommand("facebook").setExecutor(new XSCommand());
         getCommand("discord").setExecutor(new XSCommand());

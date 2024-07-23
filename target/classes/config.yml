@@ -3,6 +3,9 @@ chat_prefix: "<rank> &x&6&4&d&7&5&e<name> &x&d&5&f&f&e&c: &x&b&4&b&d&d&7<message
 facebook_URL: "https://fb.com/mcsiamcraft"
 discord_URL: "https://discord.gg/KASBrBTR2X"
 
+configuration_mode: creative
+#mode lobby / creative
+
 spawn:
   world: SCLobby
   x: -18.5
@@ -10,6 +13,583 @@ spawn:
   z: -251.5
   yaw: 0.0
   pitch: 0.0
+
+creative_item:
+  item-1:
+    material: COMMAND_BLOCK
+    slot: 8
+    amount: 1
+    displayName: "&x&6&b&e&e&7&cCommands &8(Right Click)"
+    lore: [ ]
+
+global_config:
+  next:
+    material: ARROW
+    amount: 1
+    displayName: "&eหน้าถัดไป >"
+    lore: [ ]
+  back:
+    material: ARROW
+    amount: 1
+    displayName: "&e< ย้อนกลับ"
+    lore: [ ]
+  back_menu:
+    material: BARRIER
+    amount: 1
+    displayName: "&cหน้าเมนูหลัก"
+    lore: [ ]
+  close:
+    material: BARRIER
+    amount: 1
+    displayName: "&cปิดหน้าเมนู"
+    lore: [ ]
+
+creative_mainMenu:
+  title: "&8Creative Menu"
+  not_own_plot:
+    contents:
+      create_plot:
+        material: RED_BED
+        amount: 1
+        displayName: "&x&D&0&0&0&0&0เอ๊ะ!? ดูเหมือนว่าคุณยังไม่มีโซนสร้าง"
+        lore:
+          - "&7คุณสามารถสร้างโซนต่างๆได้ทั้งหมดสองวิธี"
+          - "&7โดยการพิมพ์คำสั่ง &x&F&B&C&3&0&8/plot claim &7เพื่อเอาโซนแบบเลือก"
+          - "&7หรือสามารถพิมพ์คำสั่ง &x&F&B&C&3&0&8/plot auto &7เพื่อสุ่มโซนให้"
+          - ""
+          - "&fจำนวนโซนที่คุณสามารถมีได้ &x&F&F&C&D&4&9&l%plot_available%"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อดำเนินการสร้างโซนแบบสุ่ม"
+  own_plot:
+    contents:
+      home_plot:
+        material: DARK_OAK_DOOR
+        amount: 1
+        displayName: "&x&2&5&C&D&0&2กลับโซนสร้างของคุณ"
+        lore:
+          - "&7คุณสามารถสร้างโซนต่างๆได้ทั้งหมดสองวิธี"
+          - "&7โดยการพิมพ์คำสั่ง &x&F&B&C&3&0&8/plot claim &7เพื่อเอาโซนแบบเลือก"
+          - "&7หรือสามารถพิมพ์คำสั่ง &x&F&B&C&3&0&8/plot auto &7เพื่อสุ่มโซนให้"
+          - ""
+          - "&7สามารถบันทึกโซนบ้านคุณได้"
+          - "&7โดยการพิมพ์คำสั่ง &x&F&B&C&3&0&8/plot sethome &7เพื่อบันทึกจุดโซนบ้าน"
+          - "&7สามารถกลับมาได้โดยการพิมพ์ &x&F&B&C&3&0&8/plot home <เลขบ้าน> &7เพื่อกลับมายังโซนบ้าน"
+          - ""
+          - "&fจำนวนโซนที่คุณสามารถมีได้ &x&F&F&C&D&4&9&l%plot_have%/%plot_available%"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อกลับมายังโซนบ้านของคุณ"
+      setting_plot:
+        material: COMPARATOR
+        amount: 1
+        displayName: "&x&2&5&C&D&0&2ตั้งค่าโซน"
+        lore:
+          - "&7ใช้สำหรับตั้งค่าต่างๆภายในโซนของคุณ"
+          - ""
+          - "&x&E&3&0&F&0&Fคำเตือน ต้องอยู่ในโซนของคุณก่อนเท่านั้น!"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อเปิดหน้าเมนูตั้งค่า"
+      biome_plot:
+        material: GRASS_BLOCK
+        amount: 1
+        displayName: "&x&2&5&C&D&0&2ตั้งค่าไบโอม"
+        lore:
+          - "&7ใช้สำหรับตั้งค่าไบโอมชนิดต่างๆ"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อเปิดหน้าเมนูตั้งค่า"
+
+biome_settings:
+  title: "&8Biome Settings"
+  contents:
+    badlands:
+      material: DIRT_PATH
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʙᴀᴅ ʟᴀɴᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    bamboo_jungle:
+      material: BAMBOO
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʙᴀᴍʙᴏᴏ ᴊᴜɴɢʟᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    beach:
+      material: WATER_BUCKET
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʙᴇᴀᴄʜ"
+      lore:
+        - ""
+        - "%click_option%"
+    birch_forest:
+      material: BIRCH_WOOD
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʙɪʀᴄʜ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    cherry_grove:
+      material: CHERRY_WOOD
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴄʜᴇʀʀʏ ɢʀᴏᴠᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    cold_ocean:
+      material: ICE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴄᴏʟᴅ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    crimson_forest:
+      material: CRIMSON_FUNGUS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴄʀɪᴍꜱᴏɴ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    dark_forest:
+      material: DARK_OAK_LOG
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴅᴀʀᴋ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    deep_cold_ocean:
+      material: WATER_BUCKET
+      amount: 2
+      displayName: "&x&F&B&C&3&0&8ᴅᴇᴇᴘ ᴄᴏʟᴅ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    deep_dark:
+      material: SCULK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴅᴇᴇᴘ ᴅᴀʀᴋ"
+      lore:
+        - ""
+        - "%click_option%"
+    deep_frozen_ocean:
+      material: ICE
+      amount: 2
+      displayName: "&x&F&B&C&3&0&8ᴅᴇᴇᴘ ꜰʀᴏᴢᴇɴ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    deep_lukewarm_ocean:
+      material: PRISMARINE_BRICKS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴅᴇᴇᴘ ʟᴜᴋᴇᴡᴀʀᴍ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    deep_ocean:
+      material: COD
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴅᴇᴇᴘ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    desert:
+      material: SAND
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴅᴇꜱᴇʀᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    dripstone_caves:
+      material: DRIPSTONE_BLOCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴅʀɪᴘꜱᴛᴏɴᴇ ᴄᴀᴠᴇꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    end_barrens:
+      material: END_CRYSTAL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴇɴᴅ ʙᴀʀʀᴇɴꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    end_highlands:
+      material: END_ROD
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴇɴᴅ ʜɪɢʜʟᴀɴᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    end_midlands:
+      material: END_STONE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴇɴᴅ ᴍɪᴅʟᴀɴᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    eroded_badlands:
+      material: PODZOL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴇʀᴏᴅᴇᴅ ʙᴀᴅʟᴀɴᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    flower_forest:
+      material: BLUE_ORCHID
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜰʟᴏᴡᴇʀ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    forest:
+      material: OAK_LEAVES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    frozen_ocean:
+      material: BLUE_ICE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜰʀᴏᴢᴇɴ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    frozen_peaks:
+      material: SNOW_BLOCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜰʀᴏᴢᴇɴ ᴘᴇᴀᴋꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    frozen_river:
+      material: SNOWBALL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜰʀᴏᴢᴇɴ ʀɪᴠᴇʀ"
+      lore:
+        - ""
+        - "%click_option%"
+    grove:
+      material: MANGROVE_LOG
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ɢʀᴏᴠᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    ice_spikes:
+      material: PACKED_ICE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ɪᴄᴇ ꜱᴘɪᴋᴇꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    jagged_peaks:
+      material: SNOW_BLOCK
+      amount: 2
+      displayName: "&x&F&B&C&3&0&8ᴊᴀɢɢᴇᴅ ᴘᴇᴀᴋꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    jungle:
+      material: JUNGLE_LOG
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴊᴜɴɢʟᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    lukewarm_ocean:
+      material: BRAIN_CORAL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʟᴜᴋᴇᴡᴀʀᴍ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    lush_caves:
+      material: GLOW_BERRIES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʟᴜꜱʜ ᴄᴀᴠᴇꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    mangrove_swamp:
+      material: MANGROVE_PLANKS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴍᴀɴɢʀᴏᴠᴇ ꜱᴡᴀᴍᴘ"
+      lore:
+        - ""
+        - "%click_option%"
+    meadow:
+      material: GRASS_BLOCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴍᴇᴀᴅᴏᴡ"
+      lore:
+        - ""
+        - "%click_option%"
+    mushroom_fields:
+      material: RED_MUSHROOM
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴍᴜꜱʜʀᴏᴏᴍ ꜰɪᴇʟᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    nether_wastes:
+      material: NETHERRACK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ɴᴇᴛʜᴇʀ ᴡᴀꜱᴛᴇꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    ocean:
+      material: WATER_BUCKET
+      amount: 3
+      displayName: "&x&F&B&C&3&0&8ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    old_growth_birch_forest:
+      material: BIRCH_LEAVES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴏʟᴅ ɢʀᴏᴡᴛʜ ʙɪʀᴄʜ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    old_growth_pine_taiga:
+      material: DARK_OAK_LEAVES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴏʟᴅ ɢʀᴏᴡᴛʜ ᴘɪɴᴇ ᴛᴀɪɢᴀ"
+      lore:
+        - ""
+        - "%click_option%"
+    old_growth_spruce_taiga:
+      material: SPRUCE_LEAVES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴏʟᴅ ɢʀᴏᴡᴛʜ ꜱᴘʀᴜᴄᴇ ᴛᴀɪɢᴀ"
+      lore:
+        - ""
+        - "%click_option%"
+    plains:
+      material: OAK_LOG
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴘʟᴀɪɴꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    river:
+      material: SEAGRASS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʀɪᴠᴇʀ"
+      lore:
+        - ""
+        - "%click_option%"
+    savanna:
+      material: ACACIA_LOG
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴀᴠᴀɴɴᴀ"
+      lore:
+        - ""
+        - "%click_option%"
+    savanna_plateau:
+      material: ACACIA_PLANKS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴀᴠᴀɴɴᴀ ᴘʟᴀᴛᴇᴀᴜ"
+      lore:
+        - ""
+        - "%click_option%"
+    small_end_islands:
+      material: END_STONE_BRICKS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴍᴀʟʟ ᴇɴᴅ ɪꜱʟᴀɴᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    snowy_beach:
+      material: SNOW
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱɴᴏᴡʏ ʙᴇᴀᴄʜ"
+      lore:
+        - ""
+        - "%click_option%"
+    snowy_plains:
+      material: SNOW
+      amount: 2
+      displayName: "&x&F&B&C&3&0&8ꜱɴᴏᴡʏ ᴘʟᴀɪɴꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    snowy_slopes:
+      material: SNOW
+      amount: 3
+      displayName: "&x&F&B&C&3&0&8ꜱɴᴏᴡʏ ꜱʟᴏᴘᴇꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    snowy_taiga:
+      material: SNOW
+      amount: 4
+      displayName: "&x&F&B&C&3&0&8ꜱɴᴏᴡʏ ᴛᴀɪɢᴀ"
+      lore:
+        - ""
+        - "%click_option%"
+    soul_sand_valley:
+      material: SOUL_SAND
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴏᴜʟ ꜱᴀɴᴅ ᴠᴀʟʟᴇʏ"
+      lore:
+        - ""
+        - "%click_option%"
+    sparse_jungle:
+      material: COCOA_BEANS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴘᴀʀꜱᴇ ᴊᴜɴɢʟᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    stony_peaks:
+      material: STONE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴛᴏɴʏ ᴘᴇᴀᴋꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    stony_shore:
+      material: COBBLESTONE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴛᴏɴʏ ꜱʜᴏʀᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    sunflower_plains:
+      material: SUNFLOWER
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴜɴꜰʟᴏᴡᴇʀ ᴘʟᴀɪɴꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    swamp:
+      material: LILY_PAD
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱᴡᴀᴍᴘ"
+      lore:
+        - ""
+        - "%click_option%"
+    taiga:
+      material: DARK_OAK_LEAVES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴛᴀɪɢᴀ"
+      lore:
+        - ""
+        - "%click_option%"
+    the_end:
+      material: END_CRYSTAL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴛʜᴇ ᴇɴᴅ"
+      lore:
+        - ""
+        - "%click_option%"
+    the_void:
+      material: BEDROCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴛʜᴇ ᴠᴏɪᴅ"
+      lore:
+        - ""
+        - "%click_option%"
+    warm_ocean:
+      material: FIRE_CORAL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡᴀʀᴍ ᴏᴄᴇᴀɴ"
+      lore:
+        - ""
+        - "%click_option%"
+    warped_forest:
+      material: WARPED_FUNGUS
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡᴀʀᴘᴇᴅ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    windswept_forest:
+      material: COAL_ORE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡɪɴᴅꜱᴡᴇᴘᴛ ꜰᴏʀᴇꜱᴛ"
+      lore:
+        - ""
+        - "%click_option%"
+    windswept_gravelly_hills:
+      material: IRON_ORE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡɪɴᴅꜱᴡᴇᴘᴛ ɢʀᴀᴠᴇʟʟʏ ʜɪʟʟꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    windswept_hills:
+      material: GOLD_ORE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡɪɴᴅꜱᴡᴇᴘᴛ ʜɪʟʟꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+    windswept_savanna:
+      material: COPPER_ORE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡɪɴᴅꜱᴡᴇᴘᴛ ꜱᴀᴠᴀɴɴᴀ"
+      lore:
+        - ""
+        - "%click_option%"
+    wooded_badlands:
+      material: COARSE_DIRT
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡᴏᴏᴅᴇᴅ ʙᴀᴅʟᴀɴᴅꜱ"
+      lore:
+        - ""
+        - "%click_option%"
+
+creative_settings:
+  title: "&8Creative Settings"
+  contents:
+    weather_setting:
+      material: SNOWBALL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡᴇᴀᴛʜᴇʀ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%weather_setting%"
+        - ""
+        - "%click_option%"
+    time_setting:
+      material: CLOCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴛɪᴍᴇ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%time_setting%"
+        - ""
+        - "%click_option%"
+    pvp_setting:
+      material: DIAMOND_SWORD
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴘᴠᴘ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%pvp_setting%"
+        - ""
+        - "%click_option%"
+    gamemode_setting:
+      material: BOOK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ɢᴀᴍᴇᴍᴏᴅᴇ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%gamemode_setting%"
+        - ""
+        - "%click_option%"
+    invincible_setting:
+      material: GOLDEN_APPLE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ɪɴᴠɪɴᴄɪʙʟᴇ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%invincible_setting%"
+        - ""
+        - "%click_option%"
 
 item_join:
   item-1:

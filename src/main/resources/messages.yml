@@ -3,3 +3,40 @@ world_null: "&x&e&e&4&d&5&c&lโลกดังกล่าวไม่มีอ
 pvp_on: "&x&e&e&4&2&7&0คุณได้เข้าสู่โหมดต่อสู้แล้วโปรดระวัง"
 pvp_off: "&x&4&9&e&e&4&aคุณออกจากโหมดการต่อสู้แล้ว"
 pvp_death: "&x&8&5&e&e&8&0ผู้เล่น &x&e&e&e&3&5&0%killer% &x&8&5&e&e&8&0ได้ทำการสังหาร &x&e&e&e&3&5&0%death%"
+
+ranks:
+  siam: "&a&lsɪᴀᴍ"
+  titan: "&b&lᴛɪᴛᴀɴ"
+  hero: "&d&lʜᴇʀᴏ"
+  legend: "&6&lʟᴇɢᴇɴᴅ"
+  staff: "&x&F&F&A&7&1&F&lsᴛᴀғғ"
+  admin: "&x&F&D&2&0&2&9&lᴀᴅᴍɪɴ"
+
+settings:
+  selected: "&x&4&4&E&3&1&8▸ "
+  not_selected: "&8 "
+  weather:
+    clear: "สภาพอากาศแจ่มใส"
+    rainy: "สภาพอากาศฝนตก"
+  time:
+    morning: "เวลาเช้ามืด" #22800
+    late_morning: "เวลาเช้า" #1000
+    afternoon: "เวลากลางวัน" #6000
+    evening: "เวลาตอนเย็น" #13000
+    night: "เวลาหัวค่ำ" #15000
+    late_night: "เวลากลางคืน" #18000
+  pvp:
+    enable: "เปิดการต่อสู้"
+    disable: "ปิดการต่อสู้"
+  gamemode:
+    survival: "เอาชีวิตรอด"
+    creative: "สร้างสรรค์"
+    adventure: "ผจญภัย"
+  invincible:
+    enable: "เปิดใช้งานอัมตะ"
+    disable: "ปิดใช้งานอัมตะ"
+  click_option:
+    already_choosen: "&x&2&5&C&D&0&2คุณกำลังเลือกอยู่แล้ว"
+    not_your_own: "&x&E&3&0&F&0&F❌ ไม่ใช่โซนสร้างของคุณ"
+    click_to_toggle: "&x&F&4&F&6&3&9คลิกเพื่อเปลี่ยนแปลงค่า"
+    not_have_permission: "&x&E&3&0&F&0&F❌ คุณจำเป็นต้องมียศ %rank%&x&E&3&0&F&0&F ขึ้นไปเพื่อใช้งาน"

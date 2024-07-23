@@ -1,6 +1,7 @@
 package panat.xsectorz.listeners;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,6 +19,18 @@ public class onDamage implements Listener {
             if(e.getEntity() instanceof Player) {
 
                 Player target = (Player) e.getEntity();
+
+
+                Location coord2 = new Location(Bukkit.getWorld("Hub"),853,63,-85);
+                Location coord1 = new Location(Bukkit.getWorld("Hub"),843,50,-96);
+
+                if((target.getLocation().getBlockX() > coord1.getBlockX()) && (target.getLocation().getBlockX() < coord2.getBlockX())){
+                    if((target.getLocation().getBlockY() > coord1.getBlockY()) && (target.getLocation().getBlockY() < coord2.getBlockY())){
+                        if((target.getLocation().getBlockZ() > coord1.getBlockZ()) && (target.getLocation().getBlockZ() < coord2.getBlockZ())){
+                            return;
+                        }
+                    }
+                }
 
                 if(!XSLobby.pvp.contains(target)) {
                     e.setCancelled(true);
