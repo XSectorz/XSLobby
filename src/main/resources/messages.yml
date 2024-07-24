@@ -35,6 +35,21 @@ settings:
   invincible:
     enable: "เปิดใช้งานอัมตะ"
     disable: "ปิดใช้งานอัมตะ"
+  liquid_flow:
+    enable: "เปิดใช้งานของเหลวไหล"
+    disable: "ปิดใช้งานของเหลวไหล"
+  ice_melt:
+    enable: "เปิดใช้งานน้ำแข็งละลาย"
+    disable: "ปิดใช้งานน้ำแข็งละลาย"
+  coral_dry:
+    enable: "เปิดใช้งานปะการังแห้ง"
+    disable: "ปิดใช้งานปะการังแห้ง"
+  copper_oxide:
+    enable: "เปิดใช้งานให้คอปเปอร์ขึ้นสนิม"
+    disable: "ปิดใช้งานไม่ให้คอปเปอร์ขึ้นสนิม"
+  leaf_decay:
+    enable: "เปิดใช้งานใบไม้ร่วงหาย"
+    disable: "ปิดใช้งานไม่ให้ใบไม้ร่วงหาย"
   click_option:
     already_choosen: "&x&2&5&C&D&0&2คุณกำลังเลือกอยู่แล้ว"
     not_your_own: "&x&E&3&0&F&0&F❌ ไม่ใช่โซนสร้างของคุณ"

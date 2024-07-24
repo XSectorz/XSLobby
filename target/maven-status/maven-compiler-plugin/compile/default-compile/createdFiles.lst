@@ -2,6 +2,7 @@ panat\xsectorz\listeners\onDamage.class
 panat\xsectorz\listeners\onQuit.class
 panat\xsectorz\listeners\onJoin.class
 panat\xsectorz\menu\XSMenuHandler.class
+panat\xsectorz\listeners\onEntitySpawn.class
 panat\xsectorz\listeners\onModify.class
 panat\xsectorz\configuration\config.class
 panat\xsectorz\configuration\loadConfig.class
@@ -15,5 +16,6 @@ panat\xsectorz\listeners\onChat.class
 panat\xsectorz\listeners\onFall.class
 panat\xsectorz\listeners\onInteract.class
 panat\xsectorz\commands\XSCommand.class
+panat\xsectorz\listeners\onDeath.class
 panat\xsectorz\listeners\onClickInventory.class
 panat\xsectorz\utils\XSUtils.class

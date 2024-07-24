@@ -96,6 +96,30 @@ creative_mainMenu:
           - "&7ใช้สำหรับตั้งค่าไบโอมชนิดต่างๆ"
           - ""
           - "&x&F&4&F&6&3&9คลิกเพื่อเปิดหน้าเมนูตั้งค่า"
+      banner_creation:
+        material: CYAN_BANNER
+        amount: 1
+        displayName: "&x&2&5&C&D&0&2สร้างแบนเนอร์"
+        lore:
+          - "&7ใช้สำหรับการสร้างแบนเนอร์รวดลายต่างๆ"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อเปิดหน้าเมนูตั้งค่า"
+      player_head_creation:
+        material: PLAYER_HEAD
+        amount: 1
+        displayName: "&x&2&5&C&D&0&2หัวตกแต่ง"
+        lore:
+          - "&7ใช้สำหรับการใช้งานหัวตกแต่งต่างๆ"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อเปิดหน้าเมนูตั้งค่า"
+      music_plot:
+        material: MUSIC_DISC_CAT
+        amount: 1
+        displayName: "&x&2&5&C&D&0&2เพลงในโซนสร้าง"
+        lore:
+          - "&7เปิดเพลงในโซนสร้างของคุณ"
+          - ""
+          - "&x&F&4&F&6&3&9คลิกเพื่อเปิดหน้าเมนูตั้งค่า"
 
 biome_settings:
   title: "&8Biome Settings"
@@ -111,6 +135,13 @@ biome_settings:
       material: BAMBOO
       amount: 1
       displayName: "&x&F&B&C&3&0&8ʙᴀᴍʙᴏᴏ ᴊᴜɴɢʟᴇ"
+      lore:
+        - ""
+        - "%click_option%"
+    basalt_deltas:
+      material: BASALT
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ʙᴀꜱᴀʟᴛ ᴅᴇʟᴛᴀꜱ"
       lore:
         - ""
         - "%click_option%"
@@ -590,7 +621,51 @@ creative_settings:
         - "%invincible_setting%"
         - ""
         - "%click_option%"
-
+    waterflow_setting:
+      material: WATER_BUCKET
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴡᴀᴛᴇʀꜰʟᴏᴡ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%waterflow_setting%"
+        - ""
+        - "%click_option%"
+    ice_melt_setting:
+      material: ICE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ɪᴄᴇ ᴍᴇʟᴛ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%ice_melt_setting%"
+        - ""
+        - "%click_option%"
+    coral_dry_setting:
+      material: BUBBLE_CORAL
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴄᴏʀᴀʟ ᴅʀʏ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%coral_dry_setting%"
+        - ""
+        - "%click_option%"
+    copper_oxide_setting:
+      material: COPPER_BLOCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴄᴏᴘᴘᴇʀ ᴏxɪᴅᴇ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%copper_oxide_setting%"
+        - ""
+        - "%click_option%"
+    leaf_decay_setting:
+      material: OAK_LEAVES
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ᴏᴀᴋ ʟᴇᴀᴠᴇꜱ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%leaf_decay_setting%"
+        - ""
+        - "%click_option%"
 item_join:
   item-1:
     material: CLOCK

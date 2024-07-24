@@ -6,6 +6,7 @@ import com.plotsquared.core.location.Location;
 import com.plotsquared.core.player.PlotPlayer;
 import com.plotsquared.core.plot.Plot;
 import com.plotsquared.core.plot.PlotArea;
+import com.plotsquared.core.plot.flag.implementations.IceMeltFlag;
 import com.plotsquared.core.util.query.PlotQuery;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -28,7 +29,7 @@ public class XSMenuHandler {
     private static  ArrayList<String> timeList = new ArrayList<>(Arrays.asList("22800","1000","6000","13000","15000","18000"));
     private static ArrayList<Integer> slotIndex = new ArrayList<>(Arrays.asList(10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43));
     private static ArrayList<Integer> slotIndexMainMenuNotOwn = new ArrayList<>(Arrays.asList(13));
-    private static ArrayList<Integer> slotIndexMainMenuOwn = new ArrayList<>(Arrays.asList(11,13,15));
+    private static ArrayList<Integer> slotIndexMainMenuOwn = new ArrayList<>(Arrays.asList(10,13,14,15,22,23));
 
     public static HashMap<Player,String> getTempBiomePlot() {
         return tempBiome;
@@ -69,7 +70,7 @@ public class XSMenuHandler {
         int invSize;
 
         if(titleSection.equalsIgnoreCase("creative_mainMenu")) {
-            invSize = 27;
+            invSize = 36;
         } else {
             invSize = 54;
         }
@@ -101,6 +102,7 @@ public class XSMenuHandler {
                 getTempBiomePlot().put(p, String.valueOf(biomeType).replace("minecraft:",""));
             });
         }
+        //Bukkit.broadcastMessage(""+plot.getFlag(IceMeltFlag.class));
 
         /*plot.getBiome(biomeType -> {
             // Handle the biomeType result here

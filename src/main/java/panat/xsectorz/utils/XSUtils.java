@@ -164,6 +164,96 @@ public class XSUtils {
                 }
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.enable")));
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.disable")));
+            } else if(lore.equalsIgnoreCase("%waterflow_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("enabled") || plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.disable")));
+                        continue;
+                    } else if(plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("disabled")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.disable")));
+            } else if(lore.equalsIgnoreCase("%ice_melt_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.disable")));
+                        continue;
+                    } else if(plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.disable")));
+            } else if(lore.equalsIgnoreCase("%coral_dry_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.disable")));
+                        continue;
+                    } else if(plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.disable")));
+            } else if(lore.equalsIgnoreCase("%copper_oxide_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.disable")));
+                        continue;
+                    } else if(plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.disable")));
+            } else if(lore.equalsIgnoreCase("%leaf_decay_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.disable")));
+                        continue;
+                    } else if(plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.disable")));
             } else if(lore.equalsIgnoreCase("%gamemode_setting%")) {
                 if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
                         && p.hasPermission("xsapi.creative.hero")) {
@@ -196,6 +286,18 @@ public class XSUtils {
                         continue;
                     } else if(lores.contains("%invincible_setting%") && !p.hasPermission("xsapi.creative.hero")) {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
+                        continue;
+                    } else if(lores.contains("%waterflow_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
+                    } else if(lores.contains("%ice_melt_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
+                    } else if(lores.contains("%copper_oxide_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
+                    } else if(lores.contains("%leaf_decay_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
                         continue;
                     }
 

@@ -74,6 +74,11 @@ public class XSCommand implements CommandExecutor {
                 p.sendMessage(XSUtils.transColor("&x&e&3&4&1&e&c❙ &fคุณสามารถติดต่อ &x&f&3&5&b&5&6https://discord.siamcraft.net/ &fเพื่อแก้ไขปัญหาดังกล่าวได้"));
                 p.sendMessage("");
                 return true;
+            } else if(cmd.getName().equalsIgnoreCase("spawn")) {
+                Player p = (Player) sender;
+                if(config.customConfig.getString("configuration_mode").equalsIgnoreCase("creative")) {
+                    XSUtils.spawn(p);
+                }
             }
         } else {
 

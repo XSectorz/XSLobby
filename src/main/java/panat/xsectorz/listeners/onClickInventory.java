@@ -59,6 +59,17 @@ public class onClickInventory implements Listener {
                 p.performCommand("plot home");
                 p.closeInventory();
                 return;
+            } else if(key.equalsIgnoreCase("banner_creation")) {
+                p.performCommand("bannermaker");
+                return;
+            } else if(key.equalsIgnoreCase("music_plot")) {
+                p.closeInventory();
+                p.performCommand("plot music");
+                return;
+            } else if(key.equalsIgnoreCase("player_head_creation")) {
+                p.closeInventory();
+                p.performCommand("hdb");
+                return;
             }
 
             Location location = BukkitUtil.adapt(p.getLocation());
@@ -119,6 +130,36 @@ public class onClickInventory implements Listener {
                     plot.setFlag(InvincibleFlag.class,"false");
                 } else {
                     plot.setFlag(InvincibleFlag.class,"true");
+                }
+            } else if(key.equalsIgnoreCase("waterflow_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("enabled") || plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("default")) {
+                    plot.setFlag(LiquidFlowFlag.class,"disabled");
+                } else {
+                    plot.setFlag(LiquidFlowFlag.class,"enabled");
+                }
+            } else if(key.equalsIgnoreCase("ice_melt_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("default")) {
+                    plot.setFlag(IceMeltFlag.class,"false");
+                } else {
+                    plot.setFlag(IceMeltFlag.class,"true");
+                }
+            } else if(key.equalsIgnoreCase("coral_dry_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("default")) {
+                    plot.setFlag(CoralDryFlag.class,"false");
+                } else {
+                    plot.setFlag(CoralDryFlag.class,"true");
+                }
+            } else if(key.equalsIgnoreCase("copper_oxide_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("default")) {
+                    plot.setFlag(CopperOxideFlag.class,"false");
+                } else {
+                    plot.setFlag(CopperOxideFlag.class,"true");
+                }
+            } else if(key.equalsIgnoreCase("leaf_decay_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("default")) {
+                    plot.setFlag(LeafDecayFlag.class,"false");
+                } else {
+                    plot.setFlag(LeafDecayFlag.class,"true");
                 }
             } else if(key.equalsIgnoreCase("setting_plot")) {
                 XSMenuHandler.onOpenMenu(p,"creative_settings");

@@ -43,6 +43,8 @@ public final class XSLobby extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new onModify(),this);
         Bukkit.getPluginManager().registerEvents(new onInteract(),this);
         Bukkit.getPluginManager().registerEvents(new onClickInventory(),this);
+        Bukkit.getPluginManager().registerEvents(new onDeath(),this);
+        Bukkit.getPluginManager().registerEvents(new onEntitySpawn(),this);
 
         if(getConfig().getString("configuration_mode").equalsIgnoreCase("lobby")) {
             Bukkit.getPluginManager().registerEvents(new onFall(),this);
@@ -53,6 +55,7 @@ public final class XSLobby extends JavaPlugin {
 
         getCommand("facebook").setExecutor(new XSCommand());
         getCommand("discord").setExecutor(new XSCommand());
+        getCommand("spawn").setExecutor(new XSCommand());
 
         new loadConfig();
 

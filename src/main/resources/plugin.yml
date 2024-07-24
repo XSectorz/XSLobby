@@ -10,3 +10,5 @@ commands:
     description: command for open facebook
   discord:
     description: command for open discord
+  spawn:
+    description: command to make player go to spawn
