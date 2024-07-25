@@ -115,6 +115,18 @@ public class onClickInventory implements Listener {
                 } else {
                     plot.setFlag(PvpFlag.class,"true");
                 }
+            } else if(key.equalsIgnoreCase("snow_melt_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("true")) {
+                    plot.setFlag(SnowMeltFlag.class,"false");
+                } else {
+                    plot.setFlag(SnowMeltFlag.class,"true");
+                }
+            } else if(key.equalsIgnoreCase("snow_form_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("true")) {
+                    plot.setFlag(SnowFormFlag.class,"false");
+                } else {
+                    plot.setFlag(SnowFormFlag.class,"true");
+                }
             } else if(key.equalsIgnoreCase("gamemode_setting") && p.hasPermission("xsapi.creative.hero") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
                 Set<String> keys = messages.customConfig.getConfigurationSection("settings.gamemode").getKeys(false);
                 List<String> gamemodeList = new ArrayList<>(keys);

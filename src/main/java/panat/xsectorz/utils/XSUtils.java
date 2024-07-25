@@ -254,6 +254,42 @@ public class XSUtils {
                 }
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.enable")));
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.disable")));
+            } else if(lore.equalsIgnoreCase("%snow_melt_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.disable")));
+                        continue;
+                    } else if(plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.disable")));
+            } else if(lore.equalsIgnoreCase("%snow_form_setting%")) {
+
+                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                        && p.hasPermission("xsapi.creative.titan")) {
+
+                    if(plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("default")) {
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.enable")));
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.disable")));
+                        continue;
+                    } else if(plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("false")) {
+                        loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.enable")));
+                        loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.disable")));
+                        continue;
+                    }
+
+                }
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.enable")));
+                loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.disable")));
             } else if(lore.equalsIgnoreCase("%gamemode_setting%")) {
                 if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
                         && p.hasPermission("xsapi.creative.hero")) {
@@ -281,6 +317,9 @@ public class XSUtils {
                     } else if(lores.contains("%time_setting%") && !p.hasPermission("xsapi.creative.hero")) {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
                         continue;
+                    } else if(lores.contains("%gamemode_setting%") && !p.hasPermission("xsapi.creative.hero")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
+                        continue;
                     } else if(lores.contains("%pvp_setting%") && !p.hasPermission("xsapi.creative.hero")) {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"hero")));
                         continue;
@@ -290,6 +329,9 @@ public class XSUtils {
                     } else if(lores.contains("%waterflow_setting%") && !p.hasPermission("xsapi.creative.titan")) {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
                         continue;
+                    } else if(lores.contains("%coral_dry_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
                     } else if(lores.contains("%ice_melt_setting%") && !p.hasPermission("xsapi.creative.titan")) {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
                         continue;
@@ -297,6 +339,12 @@ public class XSUtils {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
                         continue;
                     } else if(lores.contains("%leaf_decay_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
+                    } else if(lores.contains("%snow_melt_setting%") && !p.hasPermission("xsapi.creative.titan")) {
+                        loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
+                        continue;
+                    } else if(lores.contains("%snow_form_setting%") && !p.hasPermission("xsapi.creative.titan")) {
                         loreNew.add(XSUtils.replaceColor(replaceWithRank(messages.customConfig.getString("settings.click_option.not_have_permission"),"titan")));
                         continue;
                     }

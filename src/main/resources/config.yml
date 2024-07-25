@@ -666,6 +666,24 @@ creative_settings:
         - "%leaf_decay_setting%"
         - ""
         - "%click_option%"
+    snow_melt_setting:
+      material: PACKED_ICE
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱɴᴏᴡ ᴍᴇʟᴛ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%snow_melt_setting%"
+        - ""
+        - "%click_option%"
+    snow_form_setting:
+      material: SNOW_BLOCK
+      amount: 1
+      displayName: "&x&F&B&C&3&0&8ꜱɴᴏᴡ ꜰᴏʀᴍ ꜱᴇᴛᴛɪɴɢ"
+      lore:
+        - ""
+        - "%snow_form_setting%"
+        - ""
+        - "%click_option%"
 item_join:
   item-1:
     material: CLOCK

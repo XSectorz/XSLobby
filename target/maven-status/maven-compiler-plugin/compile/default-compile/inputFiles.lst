@@ -12,6 +12,8 @@ D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\listeners\onQuit.j
 D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\utils\XSUtils.java
 D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\commands\XSCommand.java
 D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\configuration\loadConfig.java
+D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\listeners\onDeath.java
 D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\menu\XSMenuHandler.java
 D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\listeners\onChat.java
+D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\listeners\onEntitySpawn.java
 D:\XSectorZ\GitHubRepoes\XSLobby\src\main\java\panat\xsectorz\listeners\onClickInventory.java
