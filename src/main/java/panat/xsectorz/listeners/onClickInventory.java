@@ -70,6 +70,10 @@ public class onClickInventory implements Listener {
                 p.closeInventory();
                 p.performCommand("hdb");
                 return;
+            } else if(key.equalsIgnoreCase("debug_stick")) {
+                p.closeInventory();
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(),"give debugstick "+p.getName());
+                return;
             }
 
             Location location = BukkitUtil.adapt(p.getLocation());

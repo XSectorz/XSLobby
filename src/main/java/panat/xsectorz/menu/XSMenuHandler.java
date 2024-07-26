@@ -29,7 +29,7 @@ public class XSMenuHandler {
     private static  ArrayList<String> timeList = new ArrayList<>(Arrays.asList("22800","1000","6000","13000","15000","18000"));
     private static ArrayList<Integer> slotIndex = new ArrayList<>(Arrays.asList(10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43));
     private static ArrayList<Integer> slotIndexMainMenuNotOwn = new ArrayList<>(Arrays.asList(13));
-    private static ArrayList<Integer> slotIndexMainMenuOwn = new ArrayList<>(Arrays.asList(10,13,14,15,22,23));
+    private static ArrayList<Integer> slotIndexMainMenuOwn = new ArrayList<>(Arrays.asList(10,13,14,15,22,23,24));
 
     public static HashMap<Player,String> getTempBiomePlot() {
         return tempBiome;
