@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import panat.xsectorz.configuration.config;
+import panat.xsectorz.configuration.messages;
 import panat.xsectorz.utils.XSUtils;
 
 import java.util.*;
@@ -91,6 +92,10 @@ public class XSMenuHandler {
             settingSection = "creative_mainMenu.not_own_plot";
         } else {
             settingSection = "creative_mainMenu.own_plot";
+            if(plot == null) {
+                p.sendMessage(XSUtils.replaceColor(messages.customConfig.getString("only_on_plot")));
+                return;
+            }
         }
         getTempBiomePlot().put(p, "none");
 
