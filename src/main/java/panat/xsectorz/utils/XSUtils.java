@@ -86,11 +86,13 @@ public class XSUtils {
 
         ArrayList<String> loreNew = new ArrayList<>();
 
+        boolean isOwnerOrAdmin = plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin");
+
         for(String lore : lores) {
 
             if(lore.equalsIgnoreCase("%weather_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
                     if(plot.getFlag(WeatherFlag.class).toString().equalsIgnoreCase("CLEAR")) {
                         loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.weather.clear")));
@@ -109,7 +111,7 @@ public class XSUtils {
             } else if(lore.equalsIgnoreCase("%time_setting%")) {
 
                 ArrayList<String> loreTime = new ArrayList<>();
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.hero")) {
 
                     int index = 0;
@@ -133,7 +135,7 @@ public class XSUtils {
 
             } else if(lore.equalsIgnoreCase("%pvp_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                  && p.hasPermission("xsapi.creative.hero")) {
                     if(plot.getFlag(PvpFlag.class).toString().equalsIgnoreCase("true")) {
                         loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.pvp.enable")));
@@ -149,7 +151,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.pvp.disable")));
             } else if(lore.equalsIgnoreCase("%invincible_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.hero")) {
                     if(plot.getFlag(InvincibleFlag.class).toString().equalsIgnoreCase("true")) {
                         loreNew.add(XSUtils.replaceColor(SELECTED_COLOR+messages.customConfig.getString("settings.invincible.enable")));
@@ -166,7 +168,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.invincible.disable")));
             } else if(lore.equalsIgnoreCase("%waterflow_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("enabled") || plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("default")) {
@@ -184,7 +186,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.liquid_flow.disable")));
             } else if(lore.equalsIgnoreCase("%ice_melt_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("default")) {
@@ -202,7 +204,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.ice_melt.disable")));
             } else if(lore.equalsIgnoreCase("%coral_dry_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("default")) {
@@ -220,7 +222,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.coral_dry.disable")));
             } else if(lore.equalsIgnoreCase("%copper_oxide_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("default")) {
@@ -238,7 +240,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.copper_oxide.disable")));
             } else if(lore.equalsIgnoreCase("%leaf_decay_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("default")) {
@@ -256,7 +258,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.leaf_decay.disable")));
             } else if(lore.equalsIgnoreCase("%snow_melt_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("default")) {
@@ -274,7 +276,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_melt.disable")));
             } else if(lore.equalsIgnoreCase("%snow_form_setting%")) {
 
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
 
                     if(plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("default")) {
@@ -291,7 +293,7 @@ public class XSUtils {
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.enable")));
                 loreNew.add(XSUtils.replaceColor(NONE_SELECTED_COLOR+messages.customConfig.getString("settings.snow_form.disable")));
             } else if(lore.equalsIgnoreCase("%gamemode_setting%")) {
-                if(plot != null && plot.getOwner() != null && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())
+                if(plot != null && plot.getOwner() != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.hero")) {
                     String gameMode = plot.getFlagContainer().getFlagErased(GuestGamemodeFlag.class).toString();
                     for(String section : messages.customConfig.getConfigurationSection("settings.gamemode").getKeys(false)) {
@@ -308,7 +310,7 @@ public class XSUtils {
                     loreNew.add(XSUtils.replaceColor(prefix+messages.customConfig.getString("settings.gamemode." + section)));
                 }
             } else if(lore.equalsIgnoreCase("%click_option%")) {
-                if(plot == null || plot.getOwner() == null || !plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(plot == null || plot.getOwner() == null || (!plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) && !p.hasPermission("xsapi.creative.admin"))) {
                     loreNew.add(XSUtils.replaceColor(messages.customConfig.getString("settings.click_option.not_your_own")));
                 } else {
                     if(lores.contains("%weather_setting%") && !p.hasPermission("xsapi.creative.titan")) {

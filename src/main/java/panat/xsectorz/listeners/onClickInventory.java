@@ -87,15 +87,16 @@ public class onClickInventory implements Listener {
                 return;
             }
 
+            boolean isOwnerOrAdmin = plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin");
 
-            if(key.equalsIgnoreCase("weather_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            if(key.equalsIgnoreCase("weather_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
 
                 if(plot.getFlag(WeatherFlag.class).toString().equalsIgnoreCase("CLEAR")) {
                     plot.setFlag(WeatherFlag.class,"rain");
                 } else {
                     plot.setFlag(WeatherFlag.class,"clear");
                 }
-            } else if(key.equalsIgnoreCase("time_setting") && p.hasPermission("xsapi.creative.hero") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("time_setting") && p.hasPermission("xsapi.creative.hero") && isOwnerOrAdmin) {
 
                 String currentTime = plot.getFlag(TimeFlag.class).toString();
                 if(XSMenuHandler.getTimeList().contains(currentTime)) {
@@ -113,25 +114,25 @@ public class onClickInventory implements Listener {
                     plot.setFlag(TimeFlag.class,XSMenuHandler.getTimeList().get(0));
                 }
 
-            } else if(key.equalsIgnoreCase("pvp_setting") && p.hasPermission("xsapi.creative.hero") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("pvp_setting") && p.hasPermission("xsapi.creative.hero") &&isOwnerOrAdmin) {
                 if(plot.getFlag(PvpFlag.class).toString().equalsIgnoreCase("true")) {
                     plot.setFlag(PvpFlag.class,"false");
                 } else {
                     plot.setFlag(PvpFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("snow_melt_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("snow_melt_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(SnowMeltFlag.class).toString().equalsIgnoreCase("true")) {
                     plot.setFlag(SnowMeltFlag.class,"false");
                 } else {
                     plot.setFlag(SnowMeltFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("snow_form_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("snow_form_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(SnowFormFlag.class).toString().equalsIgnoreCase("true")) {
                     plot.setFlag(SnowFormFlag.class,"false");
                 } else {
                     plot.setFlag(SnowFormFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("gamemode_setting") && p.hasPermission("xsapi.creative.hero") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("gamemode_setting") && p.hasPermission("xsapi.creative.hero") && isOwnerOrAdmin) {
                 Set<String> keys = messages.customConfig.getConfigurationSection("settings.gamemode").getKeys(false);
                 List<String> gamemodeList = new ArrayList<>(keys);
 
@@ -141,37 +142,37 @@ public class onClickInventory implements Listener {
 
                 plot.setFlag(GuestGamemodeFlag.class,gamemodeList.get(index));
 
-            } else if(key.equalsIgnoreCase("invincible_setting") && p.hasPermission("xsapi.creative.hero") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("invincible_setting") && p.hasPermission("xsapi.creative.hero") && isOwnerOrAdmin) {
                 if(plot.getFlag(InvincibleFlag.class).toString().equalsIgnoreCase("true")) {
                     plot.setFlag(InvincibleFlag.class,"false");
                 } else {
                     plot.setFlag(InvincibleFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("waterflow_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("waterflow_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("enabled") || plot.getFlag(LiquidFlowFlag.class).toString().equalsIgnoreCase("default")) {
                     plot.setFlag(LiquidFlowFlag.class,"disabled");
                 } else {
                     plot.setFlag(LiquidFlowFlag.class,"enabled");
                 }
-            } else if(key.equalsIgnoreCase("ice_melt_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("ice_melt_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(IceMeltFlag.class).toString().equalsIgnoreCase("default")) {
                     plot.setFlag(IceMeltFlag.class,"false");
                 } else {
                     plot.setFlag(IceMeltFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("coral_dry_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("coral_dry_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CoralDryFlag.class).toString().equalsIgnoreCase("default")) {
                     plot.setFlag(CoralDryFlag.class,"false");
                 } else {
                     plot.setFlag(CoralDryFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("copper_oxide_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("copper_oxide_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(CopperOxideFlag.class).toString().equalsIgnoreCase("default")) {
                     plot.setFlag(CopperOxideFlag.class,"false");
                 } else {
                     plot.setFlag(CopperOxideFlag.class,"true");
                 }
-            } else if(key.equalsIgnoreCase("leaf_decay_setting") && p.hasPermission("xsapi.creative.titan") && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+            } else if(key.equalsIgnoreCase("leaf_decay_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
                 if(plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("true") || plot.getFlag(LeafDecayFlag.class).toString().equalsIgnoreCase("default")) {
                     plot.setFlag(LeafDecayFlag.class,"false");
                 } else {
@@ -194,7 +195,7 @@ public class onClickInventory implements Listener {
             } else if(key.equalsIgnoreCase("back")) {
                 getPage().put(p,getPage().get(p)-1);
             } else if(e.getView().getTitle().equalsIgnoreCase(XSUtils.replaceColor(config.customConfig.getString("biome_settings.title")))) {
-                if(!key.isEmpty() && plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString())) {
+                if(!key.isEmpty() && (plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin") )) {
                     plot.getPlotModificationManager().setBiome(BiomeType.REGISTRY.get(key), null);
                     p.closeInventory();
                 }
