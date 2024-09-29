@@ -86,7 +86,13 @@ public class XSUtils {
 
         ArrayList<String> loreNew = new ArrayList<>();
 
-        boolean isOwnerOrAdmin = plot != null && (plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin"));
+        boolean isOwnerOrAdmin;
+
+        if(plot != null) {
+            isOwnerOrAdmin = false;
+        } else {
+            isOwnerOrAdmin = (plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin"));
+        }
 
         for(String lore : lores) {
 

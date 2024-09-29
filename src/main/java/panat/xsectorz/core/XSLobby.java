@@ -46,6 +46,7 @@ public final class XSLobby extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new onDeath(),this);
         Bukkit.getPluginManager().registerEvents(new onEntitySpawn(),this);
         Bukkit.getPluginManager().registerEvents(new onPlace(),this);
+        Bukkit.getPluginManager().registerEvents(new onDeclineRs(),this);
 
         if(getConfig().getString("configuration_mode").equalsIgnoreCase("lobby")) {
             Bukkit.getPluginManager().registerEvents(new onFall(),this);

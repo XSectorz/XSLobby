@@ -1,4 +1,5 @@
 panat\xsectorz\listeners\onJoin.class
+panat\xsectorz\listeners\onDeclineRs.class
 panat\xsectorz\listeners\onModify.class
 panat\xsectorz\listeners\onPlace.class
 panat\xsectorz\listeners\onChangeSlot.class
@@ -11,6 +12,7 @@ panat\xsectorz\listeners\onDamage.class
 panat\xsectorz\listeners\onQuit.class
 panat\xsectorz\menu\XSMenuHandler.class
 panat\xsectorz\listeners\onEntitySpawn.class
+panat\xsectorz\listeners\onJoin$1.class
 panat\xsectorz\configuration\config.class
 panat\xsectorz\configuration\loadConfig.class
 panat\xsectorz\listeners\onPlayerMove$1.class
