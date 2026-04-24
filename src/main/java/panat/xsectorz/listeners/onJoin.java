@@ -10,8 +10,11 @@ import panat.xsectorz.configuration.config;
 import panat.xsectorz.core.XSLobby;
 import panat.xsectorz.utils.XSUtils;
 
-public class onJoin implements Listener {
+import java.util.HashMap;
+import java.util.UUID;
 
+public class onJoin implements Listener {
+    HashMap<UUID,Long> data = new HashMap<>();
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
 
@@ -22,7 +25,14 @@ public class onJoin implements Listener {
 
 
             if(config.customConfig.getBoolean("force_resource.enable")) {
-                p.setResourcePack(config.customConfig.getString("force_resource.resource"));
+                if(data.containsKey(p.getUniqueId())) {
+                    if(System.currentTimeMillis() - data.get(p.getUniqueId()) >= 10000L) {
+                        p.setResourcePack(config.customConfig.getString("force_resource.resource"));
+                    }
+                } else {
+                    p.setResourcePack(config.customConfig.getString("force_resource.resource"));
+                }
+                data.put(p.getUniqueId(),System.currentTimeMillis());
             }
 
 
@@ -35,7 +45,7 @@ public class onJoin implements Listener {
             public void run() {
                 XSUtils.spawn(p);
             }
-        }, 2L);
+        }, 10L);
 
         e.setJoinMessage(null);
 

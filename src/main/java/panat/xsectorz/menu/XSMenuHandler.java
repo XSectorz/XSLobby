@@ -90,6 +90,10 @@ public class XSMenuHandler {
         String settingSection;
         if(plotcount == 0) {
             settingSection = "creative_mainMenu.not_own_plot";
+            if(plot == null) {
+                p.sendMessage(XSUtils.replaceColor(messages.customConfig.getString("only_on_plot")));
+                return;
+            }
         } else {
             settingSection = "creative_mainMenu.own_plot";
             if(plot == null) {

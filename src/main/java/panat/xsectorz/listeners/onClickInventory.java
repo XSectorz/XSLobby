@@ -88,7 +88,6 @@ public class onClickInventory implements Listener {
             }
 
             boolean isOwnerOrAdmin = plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin");
-
             if(key.equalsIgnoreCase("weather_setting") && p.hasPermission("xsapi.creative.titan") && isOwnerOrAdmin) {
 
                 if(plot.getFlag(WeatherFlag.class).toString().equalsIgnoreCase("CLEAR")) {

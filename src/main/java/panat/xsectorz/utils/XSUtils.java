@@ -88,7 +88,7 @@ public class XSUtils {
 
         boolean isOwnerOrAdmin;
 
-        if(plot != null) {
+        if(plot == null) {
             isOwnerOrAdmin = false;
         } else {
             isOwnerOrAdmin = (plot.getOwner().toString().equalsIgnoreCase(p.getUniqueId().toString()) || p.hasPermission("xsapi.creative.admin"));
@@ -97,7 +97,6 @@ public class XSUtils {
         for(String lore : lores) {
 
             if(lore.equalsIgnoreCase("%weather_setting%")) {
-
                 if(plot != null && isOwnerOrAdmin
                         && p.hasPermission("xsapi.creative.titan")) {
                     if(plot.getFlag(WeatherFlag.class).toString().equalsIgnoreCase("CLEAR")) {
