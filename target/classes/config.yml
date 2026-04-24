@@ -4,6 +4,10 @@ facebook_URL: "https://fb.com/mcsiamcraft"
 discord_URL: "https://discord.gg/KASBrBTR2X"
 
 configuration_mode: creative
+force_resource:
+  enable: true
+  resource: ""
+  hash: "98C48B63632AC6571AF62DC67FEE0696F86466D6"
 #mode lobby / creative
 
 spawn:

@@ -1,7 +1,7 @@
 name: XSLobby
 version: '1.0-SNAPSHOT'
 main: panat.xsectorz.core.XSLobby
-api-version: 1.16
+api-version: 1.21
 authors: [ PanatXsectorZ ]
 description: XSectorz lobby core
 softdepend: [LuckPerms]

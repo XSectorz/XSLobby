@@ -19,12 +19,12 @@ public class onDeclineRs implements Listener {
         Player p = e.getPlayer();
         if(config.customConfig.getBoolean("force_resource.enable")) {
             if(e.getStatus() == PlayerResourcePackStatusEvent.Status.DECLINED) {
-                /*String kickMsg = "";
+                String kickMsg = "";
                 for(String s : messages.customConfig.getStringList("kick_decline_rs")) {
                     kickMsg += s.replace('&','§') + "\n";
                 }
 
-                p.kickPlayer(kickMsg); */
+                p.kickPlayer(kickMsg);
             }
         }
     }
